@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stable Diffusion UI</title>
+</head>
+<body>
+    <form action="/generate" method="post">
+        <label for="model">Model:</label>
+        <select id="model" name="model">
+            {% for model in models %}
+                <option value="{{ model }}">{{ model }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="prompt">Prompt:</label>
+        <input type="text" id="prompt" name="prompt" required><br><br>
+
+        <label for="negative_prompt">Negative Prompt:</label>
+        <input type="text" id="negative_prompt" name="negative_prompt"><br><br>
+
+        <label for="width">Width:</label>
+        <input type="number" id="width" name="width" value="512"><br><br>
+
+        <label for="height">Height:</label>
+        <input type="number" id="height" name="height" value="512"><br><br>
+
+        <input type="submit" value="Generate">
+    </form>
+</body>
+</html>
